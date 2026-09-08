@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flowboard, HR management for growing organizations</title>
+    <meta name="description" content="Flowboard centralises the employee file, the org chart, attendance, vacation balance, benefits, payslips and requests in one record, and lets every person check their own.">
+  <meta name="keywords" content="human resources, employee management, attendance tracking, vacation balance, leave requests, employee self service, HRIS Peru, Flowboard">
+  <meta name="author" content="Performily">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flowboard">
+  <meta property="og:title" content="Flowboard, HR management for growing organizations">
+  <meta property="og:description" content="One single record for every person in your organization. The employee file, attendance, benefits, payslips and requests in one place.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_419">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flowboard, HR management for growing organizations">
+  <meta name="twitter:description" content="One single record for every person in your organization.">
+  <meta name="theme-color" content="#39608f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/tokens.css">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+  <header class="masthead" id="masthead">
+    <div class="shell masthead__row">
+      <a class="brand" href="#top" aria-label="Flowboard, home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h9M5 17h5"/></svg>
+        </span>
+        <span>Flowboard</span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Main navigation" data-open="false">
+        <a href="#modules" data-i18n="nav.product">Product</a>
+        <a href="#modules" data-i18n="nav.modules">Modules</a>
+        <a href="#requests" data-i18n="nav.requests">Requests</a>
+        <a href="#security" data-i18n="nav.security">Security</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="masthead__actions">
+        <button class="lang" type="button" data-lang-toggle aria-label="Change language">
+          <span data-lang="en" aria-current="true">EN</span>
+          <span aria-hidden="true">/</span>
+          <span data-lang="es" aria-current="false">ES</span>
+        </button>
+        <a class="btn btn--sm" href="#signin" data-i18n="cta.signin">Sign in</a>
+        <a class="btn btn--sm btn--primary" href="#start" data-i18n="cta.demo">Request a demo</a>
+        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="progress" data-progress aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero shell" id="top">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="tagline label" data-i18n="hero.tag">Employment record management</p>
+          <h1 data-i18n="hero.title">One single record for <span class="strong">every person</span> in your organization</h1>
+          <p class="lead" data-i18n="hero.text">The employee file, the org chart, attendance, payslips, benefits and requests stop living in scattered files. And your people can check it for themselves.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#start" data-i18n="cta.demo">Request a demo</a>
+            <a class="btn" href="#modules" data-i18n="cta.modules">See the modules</a>
+          </div>
+          <p class="hero__note" data-i18n="hero.note">Works alongside your payroll system. It does not replace it.</p>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <article class="card record">
+            <header class="record__head">
+              <span class="avatar">AM</span>
+              <div>
+                <p class="record__name">Ana Martinez</p>
+                <p class="record__role" data-i18n="hero.card.role">Operations Analyst</p>
+              </div>
+              <span class="chip chip--ok" data-i18n="hero.card.status">Active</span>
+            </header>
+            <hr>
+            <dl class="record__list">
+              <div><dt data-i18n="hero.card.area">Area</dt><dd data-i18n="hero.card.area.v">Operations</dd></div>
+              <div><dt data-i18n="hero.card.start">Start date</dt><dd>15/01/2021</dd></div>
+              <div><dt data-i18n="hero.card.contract">Contract</dt><dd data-i18n="hero.card.contract.v">Permanent</dd></div>
+              <div><dt data-i18n="hero.card.manager">Direct manager</dt><dd>C. Gomez</dd></div>
+            </dl>
+          </article>
+
+          <div class="hero__row">
+            <article class="card gauge-card">
+              <p class="label" data-i18n="hero.gauge.title">Vacation</p>
+              <div class="gauge">
+                <svg viewBox="0 0 96 96" width="96" height="96">
+                  <circle class="gauge__track" cx="48" cy="48" r="40"></circle>
+                  <circle class="gauge__arc" cx="48" cy="48" r="40" data-gauge-arc data-value="15" data-total="30"></circle>
+                </svg>
+                <p class="gauge__value"><strong>15</strong><span data-i18n="hero.gauge.unit">days</span></p>
+              </div>
+              <p data-i18n="hero.gauge.foot">Available out of 30 accrued</p>
+            </article>
+
+            <article class="card steps-card">
+              <p class="label">SOL-0412</p>
+              <ul>
+                <li data-i18n="hero.req.1">Submitted</li>
+                <li data-i18n="hero.req.2">Reviewed by manager</li>
+                <li class="is-current" data-i18n="hero.req.3">Approved</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="figures shell" aria-label="Product figures">
+      <div class="figures__row">
+        <div class="figure"><strong>1</strong><span data-i18n="fig.1">record per employee, with no duplicates</span></div>
+        <div class="figure"><strong>2</strong><span data-i18n="fig.2">experiences over the same record</span></div>
+        <div class="figure"><strong>3</strong><span data-i18n="fig.3">traceable states on every request</span></div>
+        <div class="figure"><strong>0</strong><span data-i18n="fig.4">parallel spreadsheets</span></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="What the platform manages">
+      <div class="marquee__track">
+        <span>Employee file</span><i></i><span>Org chart</span><i></i><span>Areas and departments</span><i></i><span>Reporting line</span><i></i><span>Attendance</span><i></i><span>Punctuality</span><i></i><span>Worked hours</span><i></i><span>Vacation</span><i></i><span>Accrued days</span><i></i><span>Bonuses</span><i></i><span>Gift baskets</span><i></i><span>Meal vouchers</span><i></i><span>Leave</span><i></i><span>Permissions</span><i></i><span>Approvals</span><i></i><span>Payslips</span><i></i>
+        <span>Employee file</span><i></i><span>Org chart</span><i></i><span>Areas and departments</span><i></i><span>Reporting line</span><i></i><span>Attendance</span><i></i><span>Punctuality</span><i></i><span>Worked hours</span><i></i><span>Vacation</span><i></i><span>Accrued days</span><i></i><span>Bonuses</span><i></i><span>Gift baskets</span><i></i><span>Meal vouchers</span><i></i><span>Leave</span><i></i><span>Permissions</span><i></i><span>Approvals</span><i></i><span>Payslips</span><i></i>
+      </div>
+    </section>
+
+    <section class="section segments" id="segments">
+      <div class="shell">
+        <div class="section-head section-head--center">
+          <p class="label" data-i18n="seg.tag">Two profiles, one record</p>
+          <h2 data-i18n="seg.title">Two ways to use Flowboard</h2>
+          <p class="lead" data-i18n="seg.text">The same record seen from two sides. HR manages the information of the whole organization, and each person checks their own.</p>
+        </div>
+
+        <div class="segments__grid">
+          <article class="card segment">
+            <header class="segment__head">
+              <span class="icon-tile" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M9 3h6v4H9zM2 17h6v4H2zM16 17h6v4h-6zM12 7v4M5 17v-6h14v6"/></svg>
+              </span>
+              <h3 data-i18n="seg.hr.title">I work in HR</h3>
+            </header>
+            <p style="font-size:var(--t-sm);color:var(--ink-2)" data-i18n="seg.hr.text">You manage the information of the whole organization: you register employees, define areas and reporting lines, upload payslips, resolve requests and read operational indicators.</p>
+            <ul class="segment__list">
+              <li data-i18n="seg.hr.1">Employee file and org chart</li>
+              <li data-i18n="seg.hr.2">Attendance by area</li>
+              <li data-i18n="seg.hr.3">Request inbox</li>
+              <li data-i18n="seg.hr.4">Workforce indicators</li>
+            </ul>
+            <a class="btn btn--primary" href="#start" data-i18n="seg.hr.cta">Request a demo</a>
+          </article>
+
+          <article class="card segment">
+            <header class="segment__head">
+              <span class="icon-tile" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.6 20.6c0-3.9 3.3-6.2 7.4-6.2s7.4 2.3 7.4 6.2"/></svg>
+              </span>
+              <h3 data-i18n="seg.emp.title">I am an employee</h3>
+            </header>
+            <p style="font-size:var(--t-sm);color:var(--ink-2)" data-i18n="seg.emp.text">You check your file, your attendance, your vacation balance, your benefits and your payslips. You submit requests and follow their status. If you manage people, you also approve your team's.</p>
+            <ul class="segment__list">
+              <li data-i18n="seg.emp.1">My profile</li>
+              <li data-i18n="seg.emp.2">My vacation balance</li>
+              <li data-i18n="seg.emp.3">My payslips</li>
+              <li data-i18n="seg.emp.4">My requests</li>
+            </ul>
+            <a class="btn" href="#signin" data-i18n="seg.emp.cta">We already use Flowboard, let me in</a>
+          </article>
+        </div>
+
+        <p class="segments__note" data-i18n="seg.note">Everyone comes through the same door: a single sign in. The platform reads the role of the account and shows the matching view.</p>
+      </div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="shell">
+        <div class="section-head">
+          <p class="label" data-i18n="mod.tag">Seven modules</p>
+          <h2 data-i18n="mod.title">Everything on the same record</h2>
+          <p class="lead" data-i18n="mod.text">Every module reads and writes on the same employee file. None of them duplicates another's data, so there are never two versions of the truth.</p>
+        </div>
+
+        <div class="modules__grid">
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v4H9zM2 17h6v4H2zM16 17h6v4h-6zM12 7v4M5 17v-6h14v6"/></svg></span>
+            <h3 data-i18n="mod.1.t">Employee file and org chart</h3>
+            <p data-i18n="mod.1.d">Personal data, position, area, contract, status and document file. The reporting line between manager and employee is declared once and drives every approval.</p>
+          </article>
+
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.6 20.6c0-3.9 3.3-6.2 7.4-6.2s7.4 2.3 7.4 6.2"/></svg></span>
+            <h3 data-i18n="mod.2.t">Employee self service</h3>
+            <p data-i18n="mod.2.d">Each person checks their own employment information without writing to anyone: profile, attendance, vacation balance, benefits and payslips.</p>
+          </article>
+
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3.4 2"/></svg></span>
+            <h3 data-i18n="mod.3.t">Attendance</h3>
+            <p data-i18n="mod.3.d">Absences, punctuality, worked hours and overtime. Visible to HR and to the employee, over the same record.</p>
+          </article>
+
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2.5h8.5l5 5v14H6zM14.5 2.5v5h5M9 14.6l2.4 2.4 4.6-4.6"/></svg></span>
+            <h3 data-i18n="mod.4.t">Requests and approvals</h3>
+            <p data-i18n="mod.4.d">Vacation, leave and permissions with traceable states. Each request is routed to the right manager according to the declared reporting line.</p>
+          </article>
+
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v15H4zM4 11h16M8 3v4.4M16 3v4.4M8 15.6h3M13.4 15.6h3"/></svg></span>
+            <h3 data-i18n="mod.5.t">Benefits and vacation</h3>
+            <p data-i18n="mod.5.d">Bonuses, gift baskets, vouchers and leave. Accrued and used days update on their own when a request is approved.</p>
+          </article>
+
+          <article class="card module">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 2.5h13v19l-2.7-1.7-2.3 1.7-2.5-1.7-2.3 1.7-3.2-1.7zM8.8 8h6.4M8.8 12h6.4"/></svg></span>
+            <h3 data-i18n="mod.6.t">Payslips and payment status</h3>
+            <p data-i18n="mod.6.d">A repository by period for the payslips HR uploads, with the status of each deposit in plain sight.</p>
+          </article>
+
+          <article class="card module module--wide">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 17.6a8.5 8.5 0 0 1 17 0M12 17.6l4.1-4.7"/></svg></span>
+            <div>
+              <h3 data-i18n="mod.7.t">Workplace wellbeing</h3>
+              <p style="margin-top:0.5rem" data-i18n="mod.7.d">Temperature, lighting and air quality by space, classified against the thresholds each organization defines.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--band" id="compatibility">
+      <div class="shell">
+        <div class="section-head">
+          <p class="label" data-i18n="cmp.tag">Nothing to replace</p>
+          <h2 data-i18n="cmp.title">It works alongside what you already have</h2>
+          <p class="lead" data-i18n="cmp.text">No system change, no implementation project, no equipment to buy. Flowboard installs next to what your company already uses.</p>
+        </div>
+
+        <div class="compat__grid">
+          <article class="card compat">
+            <p class="compat__n">01</p>
+            <h3 data-i18n="cmp.1.t">Your payroll stays where it is</h3>
+            <p data-i18n="cmp.1.d">Nobody will ask you to change your accounting system. Your team uploads the payslips it already issues and here they stay organized by period and by person, with the payment status in plain sight.</p>
+          </article>
+          <article class="card compat">
+            <p class="compat__n">02</p>
+            <h3 data-i18n="cmp.2.t">You start with one area, not with a project</h3>
+            <p data-i18n="cmp.2.d">You do not have to upload years of history to find out whether it works. Load one area, let its people in, and compare how many queries stop reaching you.</p>
+          </article>
+          <article class="card compat">
+            <p class="compat__n">03</p>
+            <h3 data-i18n="cmp.3.t">Nothing else to buy</h3>
+            <p data-i18n="cmp.3.d">Everything happens in the browser. No time clocks to install, no sensors to purchase, no software to deploy on every computer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="requests">
+      <div class="shell">
+        <div class="section-head">
+          <p class="label" data-i18n="req.tag">Requests</p>
+          <h2 data-i18n="req.title">Nothing gets lost in a chat</h2>
+          <p class="lead" data-i18n="req.text">Every request has a state, an owner and a date. Whoever submitted it knows where it stands without asking, and whoever approves it resolves from the notification.</p>
+        </div>
+
+        <div class="flow">
+          <div class="flow__rail" aria-hidden="true"></div>
+          <div class="flow__grid">
+            <div>
+              <div class="flow__dot" aria-hidden="true"></div>
+              <article class="card stage">
+                <div class="stage__top"><span class="stage__n">01</span><span class="chip chip--warn" data-i18n="req.1.chip">Pending</span></div>
+                <h3 data-i18n="req.1.t">In progress</h3>
+                <p data-i18n="req.1.d">The employee submits it. The system finds their direct manager in the org chart and assigns it to them.</p>
+              </article>
+            </div>
+            <div>
+              <div class="flow__dot" aria-hidden="true"></div>
+              <article class="card stage">
+                <div class="stage__top"><span class="stage__n">02</span><span class="chip chip--neutral" data-i18n="req.2.chip">Under review</span></div>
+                <h3 data-i18n="req.2.t">Under review</h3>
+                <p data-i18n="req.2.d">The approver asks for the missing information and the request goes back to the employee without losing its history.</p>
+              </article>
+            </div>
+            <div>
+              <div class="flow__dot" aria-hidden="true"></div>
+              <article class="card stage">
+                <div class="stage__top"><span class="stage__n">03</span><span class="chip chip--ok" data-i18n="req.3.chip">Approved</span></div>
+                <h3 data-i18n="req.3.t">Approved or rejected</h3>
+                <p data-i18n="req.3.d">It is resolved with a recorded reason. If it consumes balance, the vacation balance updates right away.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section--band" id="security">
+      <div class="shell">
+        <div class="section-head section-head--center">
+          <p class="label" data-i18n="sec.tag">Role based access</p>
+          <h2 data-i18n="sec.title">Show salaries without exposing anyone</h2>
+          <p class="lead" data-i18n="sec.text">It is the question every management team asks before signing. Each person signs in and finds their own, nothing else. It is not a checkbox somebody can clear by mistake: it is how the platform is built.</p>
+        </div>
+
+        <div class="card matrix">
+          <table>
+            <caption class="label" style="text-align:left;padding-bottom:0.5rem" data-i18n="sec.caption">Who sees what</caption>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="sec.col.0">Information</th>
+                <th scope="col" data-i18n="sec.col.1">Human Resources</th>
+                <th scope="col" data-i18n="sec.col.2">Manager</th>
+                <th scope="col" data-i18n="sec.col.3">Employee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" data-i18n="sec.r1">Their own employment information</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="yes" data-i18n="sec.yes">Yes</span></td></tr>
+              <tr><th scope="row" data-i18n="sec.r2">Other people's salary</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="no">&mdash;</span></td><td><span class="no">&mdash;</span></td></tr>
+              <tr><th scope="row" data-i18n="sec.r3">Their team's requests</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="no">&mdash;</span></td></tr>
+              <tr><th scope="row" data-i18n="sec.r4">The requester's vacation balance</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="cond" data-i18n="sec.cond">On approval</span></td><td><span class="no">&mdash;</span></td></tr>
+              <tr><th scope="row" data-i18n="sec.r5">Search by identity document</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="no">&mdash;</span></td><td><span class="no">&mdash;</span></td></tr>
+              <tr><th scope="row" data-i18n="sec.r6">Upload payslips for the whole company</th><td><span class="yes" data-i18n="sec.yes">Yes</span></td><td><span class="no">&mdash;</span></td><td><span class="no">&mdash;</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="badges">
+          <span class="badge" data-i18n="sec.b1">Peruvian Personal Data Protection Law 29733</span>
+          <span class="badge" data-i18n="sec.b2">Passwords stored hashed, never in plain text</span>
+          <span class="badge" data-i18n="sec.b3">Password change required on first sign in</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="shell faq__grid">
+        <div class="section-head">
+          <p class="label" data-i18n="faq.tag">Frequently asked questions</p>
+          <h2 data-i18n="faq.title">Before you start</h2>
+          <p class="lead" data-i18n="faq.text">What we get asked in every first meeting.</p>
+        </div>
+
+        <div class="faq__list">
+          <article class="card faq__item">
+            <h3><button class="faq__q" type="button" data-faq-question aria-expanded="true" aria-controls="faq-1" id="faq-q1" data-i18n="faq.q1">Does it replace my payroll system?</button></h3>
+            <div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-q1"><p data-i18n="faq.a1">No. Flowboard works alongside it. Your team uploads the payslips that system issues and here they stay organized by period and by employee.</p></div>
+          </article>
+          <article class="card faq__item">
+            <h3><button class="faq__q" type="button" data-faq-question aria-expanded="false" aria-controls="faq-2" id="faq-q2" data-i18n="faq.q2">Can I upload my history from Excel?</button></h3>
+            <div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-q2" hidden><p data-i18n="faq.a2">In this version the initial load is manual. Bulk import is on the roadmap and we would rather not promise it too early.</p></div>
+          </article>
+          <article class="card faq__item">
+            <h3><button class="faq__q" type="button" data-faq-question aria-expanded="false" aria-controls="faq-3" id="faq-q3" data-i18n="faq.q3">Do I need to buy sensors for the wellbeing module?</button></h3>
+            <div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-q3" hidden><p data-i18n="faq.a3">We neither sell them nor require them. The module classifies the readings recorded in the platform against the thresholds you define.</p></div>
+          </article>
+          <article class="card faq__item">
+            <h3><button class="faq__q" type="button" data-faq-question aria-expanded="false" aria-controls="faq-4" id="faq-q4" data-i18n="faq.q4">How does the system know who approves each request?</button></h3>
+            <div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-q4" hidden><p data-i18n="faq.a4">From the org chart. You declare each employee's direct manager and requests route themselves.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Closing -->
+    <section class="section closing" id="start">
+      <div class="shell closing__grid">
+        <div>
+          <p class="label" data-i18n="end.tag">Request a demo</p>
+          <h2 style="margin-top:0.75rem" data-i18n="end.title">Start with one area and compare</h2>
+          <p class="lead" style="margin-top:1rem" data-i18n="end.text">Load a single area, let its people in and measure how many queries stop reaching you in a month. We walk you through the setup.</p>
+          <ul class="closing__list">
+            <li data-i18n="end.1">Reply on the same business day</li>
+            <li data-i18n="end.2">No cost during the evaluation</li>
+            <li data-i18n="end.3">We set up your first area with you</li>
+          </ul>
+        </div>
+
+        <form class="form" data-demo-form novalidate>
+          <h3 data-i18n="form.title">Tell us about your organization</h3>
+          <div class="field">
+            <label for="f-name" data-i18n="form.name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Ana Martinez" data-i18n-placeholder="form.name.ph">
+          </div>
+          <div class="field">
+            <label for="f-email" data-i18n="form.email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="ana@company.com.pe" data-i18n-placeholder="form.email.ph">
+          </div>
+          <div class="field--row">
+            <div class="field">
+              <label for="f-company" data-i18n="form.company">Company</label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="Trade name" data-i18n-placeholder="form.company.ph">
+            </div>
+            <div class="field">
+              <label for="f-size" data-i18n="form.size">Employees</label>
+              <select id="f-size" name="size">
+                <option>50 - 100</option>
+                <option selected>100 - 250</option>
+                <option>250 - 500</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit" data-i18n="cta.demo">Request a demo</button>
+          <p class="form__status" data-form-status tabindex="-1" hidden data-i18n="form.sent">Thanks. We will get back to you on the next business day.</p>
+          <p class="form__legal" data-i18n="form.legal">By submitting you accept the terms of service and the privacy policy.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="shell">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="brand" href="#top">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h9M5 17h5"/></svg>
+            </span>
+            <span>Flowboard</span>
+          </a>
+          <p class="muted" style="font-size:var(--t-sm)" data-i18n="footer.about">Performily. Employment record management for growing organizations.</p>
+          <div class="lang-pills">
+            <button class="lang-pill" type="button" data-lang="en" aria-pressed="true">English (en_US)</button>
+            <button class="lang-pill" type="button" data-lang="es" aria-pressed="false">Espanol (es_419)</button>
+          </div>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Product">
+          <p class="label" data-i18n="footer.product">Product</p>
+          <a href="#modules" data-i18n="nav.modules">Modules</a>
+          <a href="#requests" data-i18n="nav.requests">Requests</a>
+          <a href="#security" data-i18n="nav.security">Security</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+
+        <nav class="site-footer__col" aria-label="Legal">
+          <p class="label" data-i18n="footer.legal">Legal</p>
+          <a href="terms.html" data-i18n="legal.terms">Terms of service</a>
+          <a href="privacy.html" data-i18n="legal.privacy">Privacy policy</a>
+        </nav>
+
+        <div class="site-footer__col">
+          <p class="label" data-i18n="footer.contact">Contact</p>
+          <a href="mailto:contacto@performily.pe">contacto@performily.pe</a>
+          <span style="font-size:var(--t-sm);color:var(--ink-2)">Lima, Peru</span>
+          <span style="font-size:var(--t-sm);color:var(--ink-2)">Instagram, TikTok, X, YouTube</span>
+        </div>
+      </div>
+      <p class="site-footer__base">&copy; 2026 Performily</p>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js" defer></script>
+  <script src="src/js/translations.js"></script>
+  <script src="src/js/i18n.js"></script>
+</body>
+</html>
