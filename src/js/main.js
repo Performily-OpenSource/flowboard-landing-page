@@ -1,12 +1,8 @@
-/**
- * Landing page behaviour: reading progress, mobile menu,
- * FAQ accordion, vacation gauge and the demo request form.
- */
+
 (function () {
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    /* Reading progress bar */
     var bar = document.querySelector("[data-progress]");
     if (bar) {
       var onScroll = function () {
@@ -18,7 +14,6 @@
       onScroll();
     }
 
-    /* Mobile menu */
     var burger = document.querySelector("[data-burger]");
     var menu = document.getElementById("menu");
     if (burger && menu) {
@@ -35,7 +30,6 @@
       });
     }
 
-    /* FAQ accordion */
     document.querySelectorAll("[data-faq-question]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var panel = document.getElementById(btn.getAttribute("aria-controls"));
@@ -45,7 +39,6 @@
       });
     });
 
-    /* Vacation gauge */
     var arc = document.querySelector("[data-gauge-arc]");
     if (arc) {
       var used = Number(arc.getAttribute("data-value") || 0);
@@ -56,7 +49,6 @@
       arc.style.strokeDashoffset = String(c - (used / total) * c);
     }
 
-    /* Demo request form */
     var form = document.querySelector("[data-demo-form]");
     if (form) {
       form.addEventListener("submit", function (e) {
