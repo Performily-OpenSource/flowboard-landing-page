@@ -1,0 +1,73 @@
+/* ===========================================================
+   Flowboard design tokens
+   Palette: Slate Blue, seed #4A6A93, generated with
+   Material Color Utilities (SchemeTonalSpot).
+   Every text pair verified against WCAG 2.1 AA.
+   =========================================================== */
+
+:root {
+  /* Brand */
+  --primary: #39608f;
+  --primary-hover: #4f6f98;
+  --primary-press: #315279;
+  --lavender: #d7e3f8;
+  --tint: #f2f3fa;
+
+  /* Surfaces */
+  --paper: #f8f9ff;
+  --card: #ffffff;
+
+  /* Ink */
+  --ink: #191c20;
+  --ink-2: #43474e;
+  --ink-3: #616368;
+  --on-dark: #ffffff;
+  --on-dark-2: #dce5f3;
+
+  /* Lines */
+  --hair: #e7e8ee;
+  --line: #c3c6cf;
+  --line-2: #b7b8be;
+  --focus: #5979a3;
+
+  /* Semantic states, independent from the brand palette */
+  --ok: #b9dbb1;
+  --warn: #f3c577;
+  --bad: #ffcbc5;
+
+  /* Type: Inter is the only family */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --t-display: clamp(2.4rem, 5.2vw, 3.55rem);
+  --t-h2: clamp(1.72rem, 3.2vw, 2.38rem);
+  --t-h3: 1.1875rem;
+  --t-lg: 1.0625rem;
+  --t-md: 1rem;
+  --t-sm: 0.875rem;
+  --t-xs: 0.75rem;
+  --t-label: 0.72rem;
+
+  /* Spacing, 8px base */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  --s-6: 4rem;
+  --s-7: 5.5rem;
+
+  /* Radii */
+  --r-sm: 0.5rem;
+  --r-md: 0.875rem;
+  --r-lg: 1.125rem;
+  --r-pill: 999px;
+
+  /* Elevation */
+  --e-1: 0 6px 18px rgba(16, 23, 38, 0.05);
+  --e-2: 0 8px 24px rgba(16, 23, 38, 0.07);
+  --e-3: 0 14px 40px rgba(16, 23, 38, 0.16);
+
+  /* Layout */
+  --shell: 1160px;
+  --gutter: 1.5rem;
+}
