@@ -23,8 +23,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/css/tokens.css">
   <link rel="stylesheet" href="src/css/styles.css">
+  <link rel="stylesheet" href="src/css/animations.css">
+  <script src="src/js/animations.js"></script>
 </head>
 <body>
+  <div class="page-bg" aria-hidden="true"><span></span><span></span><span></span></div>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
 
   <header class="masthead" id="masthead">
@@ -62,58 +65,98 @@
 
   <main id="main">
 
-    <section class="hero shell" id="top">
-      <div class="hero__grid">
+    <section class="hero" id="top">
+      <span class="dots hero__dots" aria-hidden="true"></span>
+      <div class="shell hero__grid">
         <div class="hero__copy">
           <p class="tagline label" data-i18n="hero.tag">Employment record management</p>
           <h1 data-i18n="hero.title">One single record for <span class="strong">every person</span> in your organization</h1>
           <p class="lead" data-i18n="hero.text">The employee file, the org chart, attendance, payslips, benefits and requests stop living in scattered files. And your people can check it for themselves.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#start" data-i18n="cta.demo">Request a demo</a>
+            <a class="btn btn--primary" href="#start">
+              <span data-i18n="cta.demo">Request a demo</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
             <a class="btn" href="#modules" data-i18n="cta.modules">See the modules</a>
           </div>
+          <ul class="hero__trust">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust.1">HR and employee views</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust.2">Traceable requests</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.trust.3">English and Spanish</span></li>
+          </ul>
           <p class="hero__note" data-i18n="hero.note">Works alongside your payroll system. It does not replace it.</p>
         </div>
 
-        <div class="hero__art" aria-hidden="true">
-          <article class="card record">
-            <header class="record__head">
-              <span class="avatar">AM</span>
-              <div>
-                <p class="record__name">Ana Martinez</p>
-                <p class="record__role" data-i18n="hero.card.role">Operations Analyst</p>
-              </div>
-              <span class="chip chip--ok" data-i18n="hero.card.status">Active</span>
-            </header>
-            <hr>
-            <dl class="record__list">
-              <div><dt data-i18n="hero.card.area">Area</dt><dd data-i18n="hero.card.area.v">Operations</dd></div>
-              <div><dt data-i18n="hero.card.start">Start date</dt><dd>15/01/2021</dd></div>
-              <div><dt data-i18n="hero.card.contract">Contract</dt><dd data-i18n="hero.card.contract.v">Permanent</dd></div>
-              <div><dt data-i18n="hero.card.manager">Direct manager</dt><dd>C. Gomez</dd></div>
-            </dl>
-          </article>
+        <div class="hero__art" aria-hidden="true" data-parallax>
+          <span class="hero__glow"></span>
+          <span class="hero__ring"></span>
 
-          <div class="hero__row">
-            <article class="card gauge-card">
+          <div class="float float--notif" data-depth="26">
+            <article class="card card--strong notif">
+              <div class="notif__row">
+                <span class="chip chip--ok" data-i18n="req.3.chip">Approved</span>
+                <span class="notif__time" data-i18n="hero.notif.time">now</span>
+              </div>
+              <strong data-i18n="hero.notif.title">Vacation &middot; 05/10 to 09/10</strong>
+              <p data-i18n="hero.notif.body">C. Gomez approved your request. Your balance is now 15 days.</p>
+            </article>
+          </div>
+
+          <div class="float float--record" data-depth="10">
+            <article class="card card--strong record">
+              <header class="record__head">
+                <span class="avatar">AM</span>
+                <div>
+                  <p class="record__name">Ana Martinez</p>
+                  <p class="record__role" data-i18n="hero.card.role">Operations Analyst</p>
+                </div>
+                <span class="chip chip--ok" data-i18n="hero.card.status">Active</span>
+              </header>
+              <hr>
+              <dl class="record__list">
+                <div><dt data-i18n="hero.card.area">Area</dt><dd data-i18n="hero.card.area.v">Operations</dd></div>
+                <div><dt data-i18n="hero.card.start">Start date</dt><dd>15/01/2021</dd></div>
+                <div><dt data-i18n="hero.card.contract">Contract</dt><dd data-i18n="hero.card.contract.v">Permanent</dd></div>
+                <div><dt data-i18n="hero.card.manager">Direct manager</dt><dd>C. Gomez</dd></div>
+              </dl>
+              <div class="week">
+                <div class="week__head">
+                  <p class="label" data-i18n="hero.week">Attendance this week</p>
+                  <strong>96%</strong>
+                </div>
+                <div class="week__bars">
+                  <span style="--h:0.92"></span>
+                  <span style="--h:1"></span>
+                  <span style="--h:0.8"></span>
+                  <span style="--h:0.95"></span>
+                  <span class="is-today" style="--h:0.62"></span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="float float--steps" data-depth="20">
+            <article class="card card--strong steps-card">
+              <p class="label">SOL-0412</p>
+              <ul>
+                <li class="is-done" data-i18n="hero.req.1">Submitted</li>
+                <li class="is-done" data-i18n="hero.req.2">Reviewed by manager</li>
+                <li class="is-current" data-i18n="hero.req.3">Approved</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="float float--gauge" data-depth="32">
+            <article class="card card--strong gauge-card">
               <p class="label" data-i18n="hero.gauge.title">Vacation</p>
               <div class="gauge">
                 <svg viewBox="0 0 96 96" width="96" height="96">
                   <circle class="gauge__track" cx="48" cy="48" r="40"></circle>
                   <circle class="gauge__arc" cx="48" cy="48" r="40" data-gauge-arc data-value="15" data-total="30"></circle>
                 </svg>
-                <p class="gauge__value"><strong>15</strong><span data-i18n="hero.gauge.unit">days</span></p>
+                <p class="gauge__value"><strong data-count data-count-delay="900">15</strong><span data-i18n="hero.gauge.unit">days</span></p>
               </div>
               <p data-i18n="hero.gauge.foot">Available out of 30 accrued</p>
-            </article>
-
-            <article class="card steps-card">
-              <p class="label">SOL-0412</p>
-              <ul>
-                <li data-i18n="hero.req.1">Submitted</li>
-                <li data-i18n="hero.req.2">Reviewed by manager</li>
-                <li class="is-current" data-i18n="hero.req.3">Approved</li>
-              </ul>
             </article>
           </div>
         </div>
@@ -122,10 +165,10 @@
 
     <section class="figures shell" aria-label="Product figures">
       <div class="figures__row">
-        <div class="figure"><strong>1</strong><span data-i18n="fig.1">record per employee, with no duplicates</span></div>
-        <div class="figure"><strong>2</strong><span data-i18n="fig.2">experiences over the same record</span></div>
-        <div class="figure"><strong>3</strong><span data-i18n="fig.3">traceable states on every request</span></div>
-        <div class="figure"><strong>0</strong><span data-i18n="fig.4">parallel spreadsheets</span></div>
+        <div class="figure card"><strong data-count>1</strong><span data-i18n="fig.1">record per employee, with no duplicates</span></div>
+        <div class="figure card"><strong data-count>2</strong><span data-i18n="fig.2">experiences over the same record</span></div>
+        <div class="figure card"><strong data-count>3</strong><span data-i18n="fig.3">traceable states on every request</span></div>
+        <div class="figure card"><strong data-count>0</strong><span data-i18n="fig.4">parallel spreadsheets</span></div>
       </div>
     </section>
 
@@ -152,7 +195,7 @@
               </span>
               <h3 data-i18n="seg.hr.title">I work in HR</h3>
             </header>
-            <p style="font-size:var(--t-sm);color:var(--ink-2)" data-i18n="seg.hr.text">You manage the information of the whole organization: you register employees, define areas and reporting lines, upload payslips, resolve requests and read operational indicators.</p>
+            <p class="segment__text" data-i18n="seg.hr.text">You manage the information of the whole organization: you register employees, define areas and reporting lines, upload payslips, resolve requests and read operational indicators.</p>
             <ul class="segment__list">
               <li data-i18n="seg.hr.1">Employee file and org chart</li>
               <li data-i18n="seg.hr.2">Attendance by area</li>
@@ -169,7 +212,7 @@
               </span>
               <h3 data-i18n="seg.emp.title">I am an employee</h3>
             </header>
-            <p style="font-size:var(--t-sm);color:var(--ink-2)" data-i18n="seg.emp.text">You check your file, your attendance, your vacation balance, your benefits and your payslips. You submit requests and follow their status. If you manage people, you also approve your team's.</p>
+            <p class="segment__text" data-i18n="seg.emp.text">You check your file, your attendance, your vacation balance, your benefits and your payslips. You submit requests and follow their status. If you manage people, you also approve your team's.</p>
             <ul class="segment__list">
               <li data-i18n="seg.emp.1">My profile</li>
               <li data-i18n="seg.emp.2">My vacation balance</li>
@@ -233,7 +276,7 @@
             <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 17.6a8.5 8.5 0 0 1 17 0M12 17.6l4.1-4.7"/></svg></span>
             <div>
               <h3 data-i18n="mod.7.t">Workplace wellbeing</h3>
-              <p style="margin-top:0.5rem" data-i18n="mod.7.d">Temperature, lighting and air quality by space, classified against the thresholds each organization defines.</p>
+              <p data-i18n="mod.7.d">Temperature, lighting and air quality by space, classified against the thresholds each organization defines.</p>
             </div>
           </article>
         </div>
@@ -320,7 +363,7 @@
 
         <div class="card matrix">
           <table>
-            <caption class="label" style="text-align:left;padding-bottom:0.5rem" data-i18n="sec.caption">Who sees what</caption>
+            <caption class="label" data-i18n="sec.caption">Who sees what</caption>
             <thead>
               <tr>
                 <th scope="col" data-i18n="sec.col.0">Information</th>
@@ -381,11 +424,13 @@
 
 
     <section class="section closing" id="start">
+      <div class="closing__bg" aria-hidden="true"><span></span><span></span></div>
+      <span class="dots closing__dots" aria-hidden="true"></span>
       <div class="shell closing__grid">
-        <div>
+        <div class="closing__copy">
           <p class="label" data-i18n="end.tag">Request a demo</p>
-          <h2 style="margin-top:0.75rem" data-i18n="end.title">Start with one area and compare</h2>
-          <p class="lead" style="margin-top:1rem" data-i18n="end.text">Load a single area, let its people in and measure how many queries stop reaching you in a month. We walk you through the setup.</p>
+          <h2 data-i18n="end.title">Start with one area and compare</h2>
+          <p class="lead" data-i18n="end.text">Load a single area, let its people in and measure how many queries stop reaching you in a month. We walk you through the setup.</p>
           <ul class="closing__list">
             <li data-i18n="end.1">Reply on the same business day</li>
             <li data-i18n="end.2">No cost during the evaluation</li>
