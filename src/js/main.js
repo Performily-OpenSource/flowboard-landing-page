@@ -4,15 +4,17 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var bar = document.querySelector("[data-progress]");
-    if (bar) {
-      var onScroll = function () {
+    var masthead = document.querySelector(".masthead");
+    var onScroll = function () {
+      if (bar) {
         var max = document.documentElement.scrollHeight - window.innerHeight;
         var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
         bar.style.width = pct + "%";
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-    }
+      }
+      if (masthead) masthead.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
     var burger = document.querySelector("[data-burger]");
     var menu = document.getElementById("menu");
@@ -46,7 +48,13 @@
       var r = arc.r.baseVal.value;
       var c = 2 * Math.PI * r;
       arc.style.strokeDasharray = String(c);
-      arc.style.strokeDashoffset = String(c - (used / total) * c);
+      arc.style.strokeDashoffset = String(c);
+      /* two frames so the empty state paints before the arc fills (CSS transition) */
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          arc.style.strokeDashoffset = String(c - (used / total) * c);
+        });
+      });
     }
 
     var form = document.querySelector("[data-demo-form]");
