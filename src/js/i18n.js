@@ -1,9 +1,3 @@
-/**
- * Language switcher.
- * The markup ships in English (en_US), the default interface language.
- * Only the Spanish (es_419) dictionary travels in this file: the English
- * copy is read from the DOM on load, so nothing is duplicated.
- */
 (function () {
   "use strict";
 
@@ -44,7 +38,6 @@
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (e) {
-      /* private mode: the choice simply is not remembered */
     }
   }
 
@@ -68,7 +61,8 @@
 
     var toggle = document.querySelector("[data-lang-toggle]");
     if (toggle) {
-      toggle.addEventListener("click", function () {
+      toggle.addEventListener("click", function (event) {
+        if (event.target.closest("[data-lang]")) return;
         apply(document.documentElement.lang === "es-419" ? "en" : "es");
       });
     }
