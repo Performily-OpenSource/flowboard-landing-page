@@ -49,7 +49,6 @@
       var c = 2 * Math.PI * r;
       arc.style.strokeDasharray = String(c);
       arc.style.strokeDashoffset = String(c);
-      /* two frames so the empty state paints before the arc fills (CSS transition) */
       window.requestAnimationFrame(function () {
         window.requestAnimationFrame(function () {
           arc.style.strokeDashoffset = String(c - (used / total) * c);

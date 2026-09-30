@@ -3,7 +3,6 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var supportsObserver = "IntersectionObserver" in window;
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   if (reduceMotion || !supportsObserver) return;
 
@@ -101,43 +100,6 @@
       });
     }, { threshold: 0.6 });
     document.querySelectorAll("[data-count]").forEach(function (el) { counterObserver.observe(el); });
-
-    var art = document.querySelector("[data-parallax]");
-    if (art && finePointer) {
-      var layers = art.querySelectorAll("[data-depth]");
-      var hero = art.closest(".hero") || art;
-      var frameId = null;
-
-      hero.addEventListener("pointermove", function (event) {
-        var rect = art.getBoundingClientRect();
-        var x = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
-        var y = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
-        if (frameId) window.cancelAnimationFrame(frameId);
-        frameId = window.requestAnimationFrame(function () {
-          layers.forEach(function (layer) {
-            var depth = Number(layer.getAttribute("data-depth")) || 10;
-            layer.style.transform =
-              "translate3d(" + (x * depth).toFixed(1) + "px, " + (y * depth).toFixed(1) + "px, 0)";
-          });
-        });
-      });
-
-      hero.addEventListener("pointerleave", function () {
-        if (frameId) window.cancelAnimationFrame(frameId);
-        layers.forEach(function (layer) { layer.style.transform = ""; });
-      });
-    }
-
-
-    if (finePointer) {
-      document.addEventListener("pointermove", function (event) {
-        var card = event.target.closest && event.target.closest(".card");
-        if (!card) return;
-        var rect = card.getBoundingClientRect();
-        card.style.setProperty("--mx", (event.clientX - rect.left) + "px");
-        card.style.setProperty("--my", (event.clientY - rect.top) + "px");
-      }, { passive: true });
-    }
 
     var navLinks = Array.prototype.slice.call(document.querySelectorAll(".menu a[href^='#']"));
     var sections = navLinks

@@ -1,8 +1,3 @@
-/**
- * Spanish (es_419) dictionary.
- * English (en_US) is the default and lives in the markup, so it is not
- * repeated here: i18n.js reads it from the DOM on load.
- */
 window.FLOWBOARD_ES = {
   "skip": "Saltar al contenido principal",
 
@@ -33,6 +28,13 @@ window.FLOWBOARD_ES = {
   "hero.req.1": "Enviada",
   "hero.req.2": "Revisada por jefatura",
   "hero.req.3": "Aprobada",
+  "hero.trust.1": "Vista de RR.&nbsp;HH. y del colaborador",
+  "hero.trust.2": "Solicitudes trazables",
+  "hero.trust.3": "Espa&ntilde;ol e ingl&eacute;s",
+  "hero.notif.time": "ahora",
+  "hero.notif.title": "Vacaciones &middot; 05/10 al 09/10",
+  "hero.notif.body": "C. Gomez aprob&oacute; tu solicitud. Tu saldo se actualiz&oacute; a 15 d&iacute;as.",
+  "hero.week": "Asistencia esta semana",
 
   "fig.1": "ficha por colaborador, sin duplicados",
   "fig.2": "experiencias sobre el mismo registro",
