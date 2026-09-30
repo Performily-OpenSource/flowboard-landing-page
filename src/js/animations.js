@@ -3,12 +3,14 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var supportsObserver = "IntersectionObserver" in window;
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   if (reduceMotion || !supportsObserver) return;
 
   document.documentElement.classList.add("js-anim");
 
   document.addEventListener("DOMContentLoaded", function () {
+
 
     var REVEAL_GROUPS = [
       { selector: ".section-head", type: "up" },
@@ -100,6 +102,32 @@
       });
     }, { threshold: 0.6 });
     document.querySelectorAll("[data-count]").forEach(function (el) { counterObserver.observe(el); });
+
+    var art = document.querySelector("[data-parallax]");
+    if (art && finePointer) {
+      var layers = art.querySelectorAll("[data-depth]");
+      var hero = art.closest(".hero") || art;
+      var frameId = null;
+
+      hero.addEventListener("pointermove", function (event) {
+        var rect = art.getBoundingClientRect();
+        var x = (event.clientX - (rect.left + rect.width / 2)) / rect.width;
+        var y = (event.clientY - (rect.top + rect.height / 2)) / rect.height;
+        if (frameId) window.cancelAnimationFrame(frameId);
+        frameId = window.requestAnimationFrame(function () {
+          layers.forEach(function (layer) {
+            var depth = Number(layer.getAttribute("data-depth")) || 10;
+            layer.style.transform =
+              "translate3d(" + (x * depth).toFixed(1) + "px, " + (y * depth).toFixed(1) + "px, 0)";
+          });
+        });
+      });
+
+      hero.addEventListener("pointerleave", function () {
+        if (frameId) window.cancelAnimationFrame(frameId);
+        layers.forEach(function (layer) { layer.style.transform = ""; });
+      });
+    }
 
     var navLinks = Array.prototype.slice.call(document.querySelectorAll(".menu a[href^='#']"));
     var sections = navLinks
