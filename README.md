@@ -19,7 +19,7 @@ src/css/styles.css      Layout, glass components and sections
 src/css/animations.css  Entrance, scroll reveal and ambient (standby) motion
 src/js/i18n.js          Language switcher (en_US default, es_419)
 src/js/main.js          Menu, accordion, scroll progress, header state, gauge, form
-src/js/animations.js    Scroll reveal, counters, hero parallax, glass spotlight, active link
+src/js/animations.js    Scroll reveal, counters, hero parallax, active navigation link
 ```
 
 ## Language
@@ -28,7 +28,7 @@ The default interface language is **English (en_US)**. Spanish (es_419) is avail
 
 ## Visual style and motion
 
-Cards use a glass surface (translucent background with `backdrop-filter`) over a soft animated background. The hero shows floating cards that bob gently and follow the pointer with a parallax effect; sections reveal on scroll and figures count up. All motion is disabled when the user has `prefers-reduced-motion: reduce`, and without JavaScript the page renders complete and static.
+Cards use a glass surface (translucent background with `backdrop-filter`). The hero shows floating cards that bob gently and follow the pointer with a parallax effect; sections reveal on scroll and figures count up. All motion is disabled when the user has `prefers-reduced-motion: reduce`, and without JavaScript the page renders complete and static.
 
 ## Accessibility
 
